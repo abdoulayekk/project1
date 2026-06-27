@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact page</title>
+    <!-- Bootstrap 5.3.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body class="bg-light">
+    <!-- Navbar inclusion -->
+    {% include 'test1/navbar.html' %}
+
+    <div class="container py-5">
+        <!-- Section Header -->
+        <h1 class="alert alert-primary text-center mb-5">Contact Us</h1>
+
+        <!-- Info & Map Row -->
+        <div class="row g-4 align-items-stretch mb-5">
+            <!-- Contact Info Panel -->
+            <div class="col-md-6 d-flex flex-column justify-content-center"> 
+                <div class="bg-white p-4 rounded shadow-sm h-100 d-flex flex-column justify-content-center">
+                    <div class="mb-4">
+                        <span class="text-uppercase text-muted fw-bold d-block small tracking-wider mb-1">Email Address</span>
+                        <h3 class="fs-5 text-dark">EXEMPLE@GGMAIL.COM</h3>
+                    </div>
+                    <div class="mb-4">
+                        <span class="text-uppercase text-muted fw-bold d-block small tracking-wider mb-1">Mobile Number</span>
+                        <h3 class="fs-5 text-dark">+91 335484841</h3>
+                    </div>
+                    <div>
+                        <span class="text-uppercase text-muted fw-bold d-block small tracking-wider mb-1">Our Address</span>
+                        <h3 class="fs-6 text-dark lh-base mb-0">Plot A, Manav Rachna Campus Rd, Gadakhor Basti Village, Sector 43, Faridabad, Haryana 121004</h3>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Map Panel -->
+            <div class="col-md-6">
+                <div class="overflow-hidden rounded shadow-sm h-100" style="min-height: 350px;">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3507.9684954686654!2d77.28320847528198!3d28.450366075764737!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce0ab6fec0aab%3A0x87c9e10e1ae0b0fc!2sManav%20Rachna%20International%20Institute%20Of%20Research%20And%20Studies!5e0!3m2!1sfr!2sin!4v1782105585534!5m2!1sfr!2sin" width="100%" height="100%" style="border:0; min-height: 350px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Form Section -->
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="bg-white p-4 p-md-5 rounded shadow-sm">
+                    <h2 class="text-center mb-4 fw-bold">Have some questions?</h2>
+                    
+                    {% if x %}
+                        <div class="alert alert-success text-center mb-4" role="alert">
+                            {{ x }}
+                        </div>
+                    {% endif %}
+
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        <!-- Floating Label Input: Name -->
+                        <div class="form-floating mb-3">
+                            <input type="text" id="floatingName" placeholder="Enter your name" class="form-control" name="name" required>
+                            <label for="floatingName">Your Name</label>
+                        </div>
+                        
+                        <!-- Floating Label Input: Email -->
+                        <div class="form-floating mb-3">
+                            <input type="email" id="floatingEmail" placeholder="Enter your Email" class="form-control" name="email" required>
+                            <label for="floatingEmail">Email Address</label>
+                        </div>
+                        
+                        <!-- Floating Label Input: Message -->
+                        <div class="form-floating mb-4">
+                            <textarea id="floatingMessage" placeholder="Enter your message" class="form-control" name="message" style="height: 120px" required></textarea>
+                            <label for="floatingMessage">Your Message</label>
+                        </div>
+                        
+                        <!-- Submit Button -->
+                        <div class="d-grid">
+                            <button class="btn btn-primary btn-lg" type="submit">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer inclusion -->
+    {% include 'test1/footer.html' %}
+
+    <!-- Corrected Bootstrap 5.3.3 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
