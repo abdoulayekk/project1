@@ -1,0 +1,14 @@
+.env
+.env.*
+*.sqlite3
+*.db
+*.sql
+venv/
+env/
+p1/
+__pycache__/
+media/
+staticfiles/
+*.log
+*.pem
+*.key
